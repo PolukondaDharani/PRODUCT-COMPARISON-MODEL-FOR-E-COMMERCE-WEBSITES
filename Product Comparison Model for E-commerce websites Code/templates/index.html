@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Price Comparison Tool</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            padding: 5%;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        #languageSelector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+<script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+<script>
+    function loadGoogleTranslate() {
+        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'myid');
+    }
+    function clickfunc() {
+        const form = document.getElementById("form");
+        var inp = document.getElementById("exampleInputProduct").value;
+        return true;
+    }
+</script>
+
+			
+<div id="myid">Choose Language</div>
+<!-- <div id="languageSelector">
+    <select id="languageDropdown" class="custom-select" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="es">Spanish</option>
+        <option value="de">German</option>
+    </select>
+</div> -->
+
+<div class="container">
+    <h1><u>Product Comparison Model</u></h1>
+	<p></p>
+	<p><b>Welcome to our Price Comparison Tool!</b> </p>
+	<p></p>
+	<p>Enter a basic product name below to start comparing from various websites.</p>
+
+		<form id="form" onsubmit="return clickfunc()" name="passdata" action="{{url_for('getValue')}}" method="post">
+			<!-- <div class="radio">
+				<label for="exampleInputCategory"><b>Select the Category:</b></label><br>
+				
+				<input type="radio" id="tech" name="choice" value="tech"> Technology </input>
+			</div> -->
+			<div class="form-group">
+				<br>
+				<label for="exampleInputProduct"><b>Basic Product</b></label>
+				<input type="text" name="proName" class="form-control" id="exampleInputProduct" aria-describedby="producthelp" placeholder="Enter Product" required>
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+</div>
+
+<!-- Google Translate -->
+<!-- <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script> -->
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<!-- <script>
+    function loadGoogleTranslate() {
+        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'myid');
+    }
+    function clickfunc() {
+        const form = document.getElementById("form");
+        var inp = document.getElementById("exampleInputProduct").value;
+        return true;
+    }
+    function changeLanguage() {
+        var selectedLanguage = document.getElementById("languageDropdown").value;
+        var outputPageUrl = ""; // Replace with the URL of the output page
+        window.location.href = outputPageUrl + "?lang=" + selectedLanguage;
+    }
+</script> -->
+
+</body>
+</html>
+
+
+<!-- <!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+		<title>Price Comparison tool</title>
+		<style>
+		body{
+			background : linear-gradient(to right, rgb(140, 10, 252), rgba(140, 10, 252, 0.6));
+		}
+		.container{
+			border : 20px;
+			padding : 5%;
+			background : linear-gradient(to right, rgb(173, 3, 252), rgba(173, 3, 252, 0.6));
+		}
+		h1 {
+			font-size: 3.5rem;
+		}
+		#clothes,#shoes,#tech{
+			margin: 5px;
+			padding: 5px;
+		}
+		</style>
+		<script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+<script>
+    function loadGoogleTranslate() {
+        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'myid');
+    }
+    function clickfunc() {
+        const form = document.getElementById("form");
+        var inp = document.getElementById("exampleInputProduct").value;
+        return true;
+    }
+</script>
+
+			
+<div id="myid">Choose Language</div>
+
+  </head>
+  <body>
+		
+		<div class="container">
+			<center> <h1> <u> Product Comparison Model </u> </h1> </center>
+			<form id="form" onsubmit="return clickfunc()" name="passdata" action="{{url_for('getValue')}}" method="post">
+				<div class="radio">
+					<label for="exampleInputCategory"><b>Select the Category:</b></label><br>
+					
+					<input type="radio" id="tech" name="choice" value="tech"> Technology </input>
+				</div>
+				<div class="form-group">
+					<br>
+					<label for="exampleInputProduct"><b>Basic Product</b></label>
+					<input type="text" name="proName" class="form-control" id="exampleInputProduct" aria-describedby="producthelp" placeholder="Enter Product" required>
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+		
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		
+  </body>
+</html>
+ -->

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Product Comparison</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f9f9f9;
+            }
+    
+            h1 {
+                text-align: center;
+                color: #333;
+                margin-top: 20px;
+            }
+    
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 20px;
+            }
+    
+            .product-list {
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                padding: 20px;
+                margin: 15px;
+                width: 300px;
+                max-height: 400px;
+                overflow-y: auto;
+            }
+    
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+    
+            th, td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                text-align: left;
+            }
+    
+            th {
+                background-color: #f2f2f2;
+                color: #333;
+                text-transform: uppercase;
+            }
+    
+            .product-image {
+                display: block;
+                margin: 0 auto;
+                width: 150px;
+                height: auto;
+                border-radius: 5px;
+                margin-bottom: 15px;
+            }
+    
+            .visit-link {
+                color: #007bff;
+                text-decoration: none;
+                font-weight: bold;
+            }
+    
+            .visit-link:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    
+<body>
+    <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+<script>
+    function loadGoogleTranslate() {
+        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'myid');
+    }
+    function clickfunc() {
+        const form = document.getElementById("form");
+        var inp = document.getElementById("exampleInputProduct").value;
+        return true;
+    }
+</script>
+
+			
+<div id="myid">Choose Language</div>
+    <h1>Product Comparison</h1>
+
+    <div class="flex-container">
+        <div class="flip_list">
+            <img class="product-image" src="../static/images/flipkart.jpg" alt="Flipkart" style="display: block; margin: 0 auto;width: 150px; height: auto;">
+            <table>
+                <tr>
+                    <th>Website</th>
+                    <th>Product Name</th>
+                    <th>Rating</th>
+                    <th>Price</th>
+                    <th>Analysis</th>
+                    <th>Visit</th>
+                </tr>
+                {% for item in f %}
+                <tr>
+                    <td>{{ item[0] }}</td>
+                    <td>{{ item[1] }}</td>
+                    <td>{{ item[2] }}</td>
+                    <td>{{ item[3] }}</td>
+                    <td class="analysis">
+                        <span class="positive">Positive: {{ item[5] }}</span><br>
+                        <span class="negative">Negative: {{ item[6] }}</span>
+                    </td>
+                    <td><a href="{{ item[4] }}" class="visit-link" target="_blank">Visit</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div class="ebay_list">
+            <img class="product-image" src="../static/images/ebay.png" alt="Amazon" style="display: block; margin: 0 auto;width: 150px; height: auto;">
+            <table>
+                <tr>
+                    <th>Website</th>
+                    <th>Product Name</th>
+                    <th>Rating</th>
+                    <th>Price</th>
+                    <th>Analysis</th>
+                    <th>Visit</th>
+                </tr>
+                {% for item in e %}
+                <tr>
+                    <td>{{ item[0] }}</td>
+                    <td>{{ item[1] }}</td>
+                    <td>{{ item[2] }}</td>
+                    <td>{{ item[3] }}</td>
+                    <td class="analysis">
+                        <span class="positive">Positive: {{ item[5] }}</span><br>
+                        <span class="negative">Negative: {{ item[6] }}</span>
+                    </td>
+                    <td><a href="{{ item[4] }}" class="visit-link" target="_blank">Visit</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="amaz_list">
+            <img class="product-image" src="../static/images/amazon.jpg" alt="Amazon" style="display: block; margin: 0 auto;width: 150px; height: auto;">
+            <table>
+                <tr>
+                    <th>Website</th>
+                    <th>Product Name</th>
+                    <th>Rating</th>
+                    <th>Price</th>
+                    <th>Analysis</th>
+                    <th>Visit</th>
+                </tr>
+                {% for item in a %}
+                <tr>
+                    <td>{{ item[0] }}</td>
+                    <td>{{ item[1] }}</td>
+                    <td>{{ item[2] }}</td>
+                    <td>{{ item[3] }}</td>
+                    <td class="analysis">
+                        <span class="positive">Positive: {{ item[5] }}</span><br>
+                        <span class="negative">Negative: {{ item[6] }}</span>
+                    </td>
+                    <td><a href="{{ item[4] }}" class="visit-link" target="_blank">Visit</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

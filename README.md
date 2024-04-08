@@ -9,7 +9,7 @@ Our project addresses the challenge of simplifying online shopping by developing
 
 <h2>Template for Product Comparison Website</h2>
 <h3>Input page</h3>
-![image](https://github.com/PolukondaDharani/PRODUCT-COMPARISON-MODEL-FOR-E-COMMERCE-WEBSITES/assets/102342077/93203642-1ded-4695-91c7-2327276ed3eb)
+![image](https://github.com/PolukondaDharani/PRODUCT-COMPARISON-MODEL-FOR-E-COMMERCE-WEBSITES/assets/102342077/dd9217cd-fb05-48d5-af52-02b7ab5f5ef0)
 <h3> Output Page</h3>
 ![image](https://github.com/PolukondaDharani/PRODUCT-COMPARISON-MODEL-FOR-E-COMMERCE-WEBSITES/assets/102342077/ab7d4195-dabc-40d7-902d-9668385f5f91)
 <h2>Multilingual Support</h2>
